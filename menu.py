@@ -1,37 +1,27 @@
+from utils import leave, width, height, red, screen
 import pygame
-import sys
-size = width, height = 500, 800 
 
 black = 0, 0, 0
 green = 0, 255, 0
 red = 255, 0, 0
 blue = 0, 0, 255
 
-screen = pygame.display.set_mode(size)
-BUTTON_WIDTH = 200
-BUTTON_HEIGHT = 70               #x               -           y                   -     width   -      height
-BackButton = pygame.Rect((width/2)-BUTTON_WIDTH/2, (height/1.5)-BUTTON_HEIGHT/2, BUTTON_WIDTH, BUTTON_HEIGHT)
-LeaveButton = pygame.Rect((width/2)-BUTTON_WIDTH/2, (height/1.5)-BUTTON_HEIGHT/2+100, BUTTON_WIDTH, BUTTON_HEIGHT)
+button_width = 200
+button_height = 70     
+
+BackButton = pygame.Rect((width/2)-button_width/2, (height/1.5)-button_height/2, button_width, button_height)
 
 def menu():
     menu = True
     while menu:
         screen.blit(pygame.image.load("./japaneseBackgroud.jpg"), (-600,-50))
-        pygame.draw.rect(screen, red, BackButton)  # draw back button
-        pygame.draw.rect(screen, blue, LeaveButton)  # draw leave button
+        pygame.draw.rect(screen, red, BackButton)
 
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
-                
                 if BackButton.collidepoint(pygame.mouse.get_pos()):
                     menu = False
 
-                if LeaveButton.collidepoint(pygame.mouse.get_pos()):
-                    pygame.quit()
-                    sys.exit()
-
-            #leave game
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+            elif event.type == pygame.QUIT:
+                leave()
         pygame.display.update()
