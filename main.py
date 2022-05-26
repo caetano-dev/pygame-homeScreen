@@ -1,5 +1,5 @@
 from menu import menu
-from utils import button, leave, play, width, height, green, blue, screen, button_height, button_width
+from utils import button, quit, play, width, height, green, blue, screen, button_height, button_width, shop
 import pygame
 
 pygame.init()
@@ -10,12 +10,15 @@ def intro():
         print("intro")
         screen.blit(pygame.image.load("./japaneseBackgroud.jpg"), (-600,-50))
 
-        button("Play", width/2 - button_width/2, height/2 - button_height/2, button_width, button_height, green, blue, play)
-        button("Menu", width/2 - button_width/2, height/2 + button_height/2, button_width, button_height, green, blue, menu)
-        button("Leave", width/2 - button_width/2, height/2 + button_height*2, button_width, button_height, green, blue, leave)
+        button("Play", width/2 - button_width/2, height/2 - button_height/2+80, button_width, button_height, green, blue, play)
+        button("Shop", width/2 - button_width/2, height/2 - button_height/2+160, button_width, button_height, green, blue, shop)
+        button("Menu", width/2 - button_width/2, height/2 - button_height/2+240, button_width, button_height, green, blue, menu)
+        button("Quit", width/2 - button_width/2, height/2 - button_height/2+320, button_width, button_height, green, blue, quit)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                leave()
+                quit()
         pygame.display.update()
-intro()
+
+if __name__ == "__main__":
+    intro()

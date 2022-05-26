@@ -8,7 +8,7 @@ green = 0,255,0
 red = 255,0,0
 blue = 0,0,255
 
-button_width = 200
+button_width = 300
 button_height = 70     
 
 screen = pygame.display.set_mode((500, 800))
@@ -34,8 +34,9 @@ def button(msg, x, y, w, h, ic, ac, action=None):
 
 def play():
     print("Play")
-
-def leave():
+def shop():
+    print("Shop")
+def quit():
     pygame.quit()
     sys.exit()
 

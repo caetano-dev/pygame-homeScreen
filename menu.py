@@ -1,4 +1,4 @@
-from utils import leave, width, height, red, screen
+from utils import quit, width, height, red, screen
 import pygame
 
 black = 0, 0, 0
@@ -9,7 +9,7 @@ blue = 0, 0, 255
 button_width = 200
 button_height = 70     
 
-BackButton = pygame.Rect((width/2)-button_width/2, (height/1.5)-button_height/2, button_width, button_height)
+BackButton = pygame.Rect(width/2 - button_width/2, height/2 - button_height/2+160, button_width, button_height)
 
 def menu():
     menu = True
@@ -23,5 +23,5 @@ def menu():
                     menu = False
 
             elif event.type == pygame.QUIT:
-                leave()
+                quit()
         pygame.display.update()
