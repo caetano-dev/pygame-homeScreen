@@ -9,11 +9,11 @@ def intro():
     while intro:
         print("intro")
         screen.blit(pygame.image.load("./japaneseBackgroud.jpg"), (-600,-50))
-
-        button("Play", width/2 - button_width/2, height/2 - button_height/2+80, button_width, button_height, green, blue, play)
-        button("Shop", width/2 - button_width/2, height/2 - button_height/2+160, button_width, button_height, green, blue, shop)
+        # add image to button
+        button("Play", width/2 - button_width/2, height/2 - button_height/2+40, button_width, button_height, green, blue, play)
+        button("Shop", width/2 - button_width/2, height/2 - button_height/2+140, button_width, button_height, green, blue, shop)
         button("Menu", width/2 - button_width/2, height/2 - button_height/2+240, button_width, button_height, green, blue, menu)
-        button("Quit", width/2 - button_width/2, height/2 - button_height/2+320, button_width, button_height, green, blue, quit)
+        button("Quit", width/2 - button_width/2, height/2 - button_height/2+340, button_width, button_height, green, blue, quit)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

@@ -9,7 +9,7 @@ red = 255,0,0
 blue = 0,0,255
 
 button_width = 300
-button_height = 70     
+button_height = 80     
 
 screen = pygame.display.set_mode((500, 800))
 size = width, height = 500, 800 
@@ -30,7 +30,23 @@ def button(msg, x, y, w, h, ic, ac, action=None):
     smallText = pygame.font.SysFont("comicsansms", 20)
     textSurf, textRect = text_objects(msg, smallText)
     textRect.center = ((x+(w/2)), (y+(h/2)))
-    screen.blit(textSurf, textRect)
+    # screen.blit(textSurf, textRect)
+    if msg == "Play":
+        image = pygame.image.load("play.png")
+        image = pygame.transform.scale(image, (w, h))
+        screen.blit(image, (x,y))
+    elif msg == "Shop":
+        image = pygame.image.load("shop.png")
+        image = pygame.transform.scale(image, (w, h))
+        screen.blit(image, (x,y))
+    elif msg == "Quit":
+        image = pygame.image.load("quit.png")
+        image = pygame.transform.scale(image, (w, h))
+        screen.blit(image, (x,y))
+    elif msg == "Menu":
+        image = pygame.image.load("menu.png")
+        image = pygame.transform.scale(image, (w, h))
+        screen.blit(image, (x,y))
 
 def play():
     print("Play")
